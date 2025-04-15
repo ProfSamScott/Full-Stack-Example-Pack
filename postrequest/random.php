@@ -1,6 +1,6 @@
 <?php
 /**
- * Very simple "server" script. Takes two post parameters and then
+ * Very simple "server" script. Takes two POST parameters and then
  * returns a random number.
  * 
  * Sam Scott, McMaster University, 2025
