@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+Add javascript code to animate the H1 elements. Make them fly in from the 
+left or right when the window loads and stop when they reach the middle 
+of the browser. (Hint: use Window.innerWidth to get the width of the
+browser, then divide it by 2 to find the middle point.)
+
+Can you make them each fly in one after another?
+
+Can you make them fly in in response to a button click?
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1 {
+                width:300px;
+                padding:10px;
+                text-align:center;
+                border-radius:10px;
+                background-color:blue;
+                color:yellow;
+                position:absolute;
+                font-family:monospace;
+                font-weight:bold;
+                font-size:50px;
+            }
+            #fly1 {
+                top:100px;
+            }
+            #fly2 {
+                top:200px;
+            }
+            #fly3 {
+                top:300px;
+            }
+            #fly4 {
+                top:400px;
+            }
+        </style>
+        <script>
+            window.addEventListener("load", function (event) {
+                // You'll need some global variables
+                
+                // You'll need an updateAnimation function
+                function updateAnimation() {
+                  
+                }
+
+                // You'll need to start the animation here
+                // Don't forget to save the timer id so you
+                // can stop it later!
+            });
+        </script>
+    </head>
+    <body>
+        <h1 id="fly1">JavaScript</h1>
+        <h1 id="fly2">is</h1>
+        <h1 id="fly3">Really</h1>
+        <h1 id="fly4">Cool!</h1>
+    </body>
+</html>

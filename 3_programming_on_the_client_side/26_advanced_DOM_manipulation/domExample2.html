@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+An example for DOM manipulation exercises
+Sam Scott, McMaster University, 2024
+-->
+<html>
+    <head>
+        <title>DOM Example</title>
+        <meta charset="UTF-8">
+        <script>
+            window.addEventListener("load", function () {
+
+                // the click handler to be added to every div
+                var clickFunction = function (event) {
+                    alert("clicked");
+                };
+
+                // adds the click event to every div
+                var divs = document.querySelectorAll("div");
+                for (var i = 0; i < divs.length; i++)
+                    divs[i].onclick = clickFunction;
+            });
+        </script>
+    </head>
+    <body>
+        <div id="div1">This div has ID "div1"</div>
+        <div>"This div has no ID</div>
+        <div>This div has no ID</div>
+    </body>
+</html>

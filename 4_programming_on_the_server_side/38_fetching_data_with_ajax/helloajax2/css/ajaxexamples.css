@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: lightyellow;
+}
+
+input {
+    font-size: 1.2em;
+    padding: 2px;
+}
+
+#container {
+    max-width: 768px;
+    margin: auto;
+}
+
+#header {
+    text-align: center;
+    border-bottom: 4px solid rosybrown;
+    padding: 20px;
+}
+
+#body {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 2em;
+}

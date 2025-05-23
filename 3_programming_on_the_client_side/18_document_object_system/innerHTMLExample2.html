@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Simple innerHTML Example</title>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function changeDiv() {
+            alert("Press OK to see me change the contents of my div.");
+            document.getElementById("target").innerHTML =
+                "<p>First paragraph</p><p>Second paragraph</p>";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>A Simple Example</h1>
+    <div id='target' style="color:red">Here is some text in a div.</div>
+    <p>Open the console and run changeDiv() to change the div contents.
+        Then inspect the div element in the developer tools to see the new
+        elements that were created.</p>
+</body>
+
+</html>

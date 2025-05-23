@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+Example CSS Animation
+Sam Scott, McMaster, 2024
+-->
+<html>
+
+<head>
+    <title>Example Animation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script type='text/javascript'>
+        // Following best practices, it's all inside a window load event
+        window.addEventListener("load", function (event) {
+            // global variables (global to this function, that is)
+            // to control the animation
+            const ball = {
+                x: 0, y: 200,
+                xSpeed: 1, ySpeed: -0,
+                radius: 50
+            };
+            let timerId;            // holds the id of the timer
+
+            // starts the animation
+            function startAnimation() {
+                // 16  milliseconds works out to 62.5 frames per second.
+                // for games, 60 frames per second is standard
+                timerId = setInterval(updateAnimation, 16);
+            }
+
+            // stops the animation
+            function stopAnimation() {
+                clearTimeout(timerId);
+            }
+
+            // This function is called every 16 milliseconds
+            function updateAnimation() {
+                // 1. Update the animation variables
+                ball.x = ball.x + ball.xSpeed;
+                ball.y = ball.y + ball.ySpeed;
+
+                // 2. Change some CSS properties
+                let e = document.getElementById("movingBall");
+                e.style.left = ball.x + "px";
+                e.style.top = ball.y + "px";
+
+                // 3. Collision detection: stop the animation if the ball is at the edge of the screen
+                // window.innerWidth is the current width of the browser
+                if (ball.x >= window.innerWidth - ball.radius * 2)
+                    stopAnimation();
+            }
+
+            // Start things up!
+            startAnimation();
+        });
+    </script>
+    <style>
+        #movingBall {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 200px;
+            background-color: black;
+            top: 200px;
+            left: 0px;
+            color: silver;
+            display: flex;
+            align-items:center;
+        }
+        p {
+            text-align: center;
+            width:100%;
+        }
+    </style>
+</head>
+
+<body style='text-align:center;'>
+    <div id="movingBall"><p>I'm a ball!</p></div>
+</body>
+
+</html>

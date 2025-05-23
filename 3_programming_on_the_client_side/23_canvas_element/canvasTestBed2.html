@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canvas Test Bed</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css">
+        #canvas2 {
+            border: 30px solid black;
+            background-color: white;
+        }
+
+        #canvas1 {
+            background-color: silver;
+            margin: 30px;
+        }
+
+        body {
+            text-align: center;
+            color: silver;
+            background-color: rgb(53, 66, 29);
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            function whereClicked(event) {
+                var x = event.pageX - this.offsetLeft;
+                var y = event.pageY - this.offsetTop;
+
+                var ctx = this.getContext("2d");
+                ctx.fillStyle = "rgb(53, 66, 29)";
+                ctx.fillText("(" + x + "," + y + ")", x, y);
+
+                console.log(this.id + " (" + x + "," + y + ")");
+            }
+
+            document.getElementById("canvas1").addEventListener("mousemove", whereClicked);
+            document.getElementById("canvas2").addEventListener("click", whereClicked);
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>Canvas Test Bed 2</h1>
+    <canvas id="canvas1" width="400" height="400"></canvas>
+    <canvas id="canvas2" width="400" height="400"></canvas>
+    <br>
+    <input type="button" value="Button 1">
+    <input type="button" value="Button 2">
+    <input type="button" value="Button 3">
+    <input type="button" value="Button 4">
+</body>
+
+</html>

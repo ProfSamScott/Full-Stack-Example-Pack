@@ -1,0 +1,12 @@
+#clickme {
+    width: 25%;
+    text-align: center;
+    padding: 5px;
+    background-color: royalblue;
+    color: silver;
+    cursor: pointer;
+}
+
+#clickme:hover {
+    background-color: darkslateblue;
+}
