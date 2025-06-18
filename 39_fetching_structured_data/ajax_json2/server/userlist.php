@@ -16,7 +16,7 @@ header('Content-Type: application/json');
 include "connect.php";
 
 // Prepare and execute the DB query
-$command = "SELECT firstname, lastname, final_exam FROM grades ORDER BY lastname";
+$command = "SELECT `firstname`, `lastname`, `final_exam` FROM `grades` ORDER BY `lastname`";
 $stmt = $dbh->prepare($command);
 $success = $stmt->execute();
 

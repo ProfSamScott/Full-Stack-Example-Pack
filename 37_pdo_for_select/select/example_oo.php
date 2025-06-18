@@ -11,7 +11,7 @@ include "connect.php";
 include "user.php";     // import User class definition
 
 // Prepare and execute the DB query
-$command = "SELECT firstname, lastname FROM grades ORDER BY lastname";
+$command = "SELECT `firstname`, `lastname` FROM `grades` ORDER BY `lastname`";
 $stmt = $dbh->prepare($command);
 $success = $stmt->execute();
 

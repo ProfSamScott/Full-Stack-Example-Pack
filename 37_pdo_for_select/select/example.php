@@ -10,7 +10,7 @@
 include "connect.php";
 $limit = 50;
 
-$command = "SELECT firstname, lastname FROM grades WHERE final_exam>=? ORDER BY lastname";
+$command = "SELECT `firstname`, `lastname` FROM `grades` WHERE `final_exam` >= ? ORDER BY `lastname`";
 $stmt = $dbh->prepare($command);
 $params = [$limit];
 $success = $stmt->execute($params);
