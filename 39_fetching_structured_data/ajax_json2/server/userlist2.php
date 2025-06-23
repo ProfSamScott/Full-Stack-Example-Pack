@@ -17,7 +17,7 @@ include "connect.php";
 include "user.php";
 
 // Prepare and execute the DB query
-$command = "SELECT firstname, lastname, final_exam FROM grades ORDER BY lastname";
+$command = "SELECT `firstname`, `lastname`, `final_exam` FROM `grades` ORDER BY `lastname`";
 $stmt = $dbh->prepare($command);
 $success = $stmt->execute();
 // The line below instructs PDO to fetch data into matching fields

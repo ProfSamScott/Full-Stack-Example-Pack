@@ -17,7 +17,7 @@ include "connect.php";
 $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
 
 // Prepare and execute the DB query
-$command = "SELECT * FROM grades WHERE student_id=?";
+$command = "SELECT * FROM `grades` WHERE `student_id` = ?";
 $stmt = $dbh->prepare($command);
 $success = $stmt->execute([$id]);
 

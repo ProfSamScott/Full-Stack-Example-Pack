@@ -8,7 +8,7 @@ include "connect.php";
 
 // delete poll, if parameter set
 $id = filter_input(INPUT_POST, "id", FILTER_SANITIZE_SPECIAL_CHARS);
-$deletecommand = "DELETE FROM NewTestTable WHERE ID=$id";
+$deletecommand = "DELETE FROM `NewTestTable` WHERE `ID` = $id";
 $stmt = $dbh->prepare($deletecommand);
 if ($stmt->execute()) {
     $message = "ID received: $id. Number of rows deleted: {$stmt->rowCount()}.";

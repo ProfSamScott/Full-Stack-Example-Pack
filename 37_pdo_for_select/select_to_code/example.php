@@ -11,7 +11,7 @@
 include "connect.php";
 
 // Prepare and execute the DB query
-$command = "SELECT firstname, lastname, student_id FROM grades ORDER BY lastname";
+$command = "SELECT `firstname`, `lastname`, `student_id` FROM `grades` ORDER BY `lastname`";
 $stmt = $dbh->prepare($command);
 $success = $stmt->execute();
 ?>
