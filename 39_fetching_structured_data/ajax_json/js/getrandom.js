@@ -23,7 +23,7 @@ window.addEventListener("load", function() {
         console.log(a); // debug
     }
 
-    let button = document.getElementById("clickme");
+    const button = document.getElementById("clickme");
     button.addEventListener("click", function() {
 
         // get the values
