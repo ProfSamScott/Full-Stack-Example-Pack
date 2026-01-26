@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+Example of a Class that Renders to the DOM
+Sam Scott, McMaster, 2024
+-->
+<html>
+
+<head>
+    <title>Example Class</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="players.css">
+    <script src="player.js"></script>
+    <script>
+        window.addEventListener("load", function (event) {
+            // the model (array of players)
+            const players = [];
+
+            // some important DOM elements
+            const namefield = document.getElementById("name");
+            const rankfield = document.getElementById("rank");
+            const serialfield = document.getElementById("serial");
+            const playerbox = document.getElementById("players");
+            const numplayers = document.getElementById("numplayers");
+
+            /**
+             * Button listener to add and render players
+             */
+            document.getElementById("button")
+                .addEventListener("click", function (event) {
+                    // create player and add to array
+                    const p = new Player(namefield.value, rankfield.value, parseInt(serialfield.value));
+                    players.push(p);
+                    console.log(JSON.stringify(players));
+                    
+                    // modify the header of the players section
+                    if (players.length == 1) {
+                        numplayers.innerHTML = "1 Player";
+                    } else {
+                        numplayers.innerHTML = players.length + " Players"
+                    }
+
+                    // render the players
+                    playerbox.innerHTML = "";
+                    for (let player of players) {
+                        playerbox.innerHTML += player.render();
+                    }
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="form" class="content">
+        <h1>Add a Player</h1>
+        <input id="name" type="text">
+        <p>name</p>
+        <select id="rank">
+            <option></option>
+            <option>Rookie</option>
+            <option>Beginner</option>
+            <option>Advanced</option>
+        </select>
+        <p>rank</p>
+        <input id="serial" type="number" min="1">
+        <p>serial number</p>
+        <input id="button" type="button" value="Add Player">
+    </div>
+    <div class="content">
+        <h1 id="numplayers">Players</h1>
+        <div id="players">
+            <p>None added</p>
+        </div>
+    </div>
+</body>
+
+</html>

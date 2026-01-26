@@ -1,0 +1,32 @@
+/* CSS for the players example. Sam Scott, McMaster 2025 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.content {
+    padding: 20px;
+    background-color: skyblue;
+    max-width: 200px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#form p {
+    margin-bottom: 10px;
+}
+
+.player {
+    padding: 2px;
+    margin: 5px;
+    background-color: white;
+}
+
+.player ul {
+    list-style-type: none;
+    padding: 3px;
+}
